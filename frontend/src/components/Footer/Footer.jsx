@@ -13,7 +13,7 @@ function Footer() {
                 <p> SHOPPER</p>
                 
             </div>
-            <ul className="footer-llinks">
+            <ul className="footer-links">
                 <li>Comany</li>
                 <li>Products</li>
                 <li>Offices</li>
