@@ -57,7 +57,8 @@ npm start
 Your site will run at `http://localhost:3000`.
 
 ---
-
+### live demo 
+`https://e-commerce-website.liara.run/`
 ## 🎯 Features
 ✅ Browse product list  
 ✅ View product details  
