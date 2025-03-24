@@ -8,8 +8,7 @@ This is a simple **E-Commerce Store** built using **React.js** and **Context API
 ## 🚀 Technologies Used
 - **React.js** ⚛️ (Frontend development)  
 - **React Router** 🔀 (For navigation)  
-- **Context API** 🌍 (State management for cart)  
-- **CSS (SASS / TailwindCSS)** 🎨 (Styling)  
+- **Context API** 🌍 (State management for cart)   
 - **Git & GitHub** 🛠️ (Version control)  
 
 ---
@@ -22,7 +21,8 @@ This is a simple **E-Commerce Store** built using **React.js** and **Context API
  ├ 📂 src
  ┃ ├ 📂 components
  ┃ ┃ ├ 📂 Assets       # Images & product data
- ┃ ┃ ├ 📂 Breadcrums   # Breadcrumb navigation
+ ┃ ┃ ├ 📂 Breadcrums   # Breadcrumb etc...
+ navigation
  ┃ ┃ └ 📋 CartItems.jsx  # Cart component
  ┃ ├ 📂 context
  ┃ ┃ └ 📋 ShopContext.jsx  # Context API state management
@@ -41,7 +41,7 @@ This is a simple **E-Commerce Store** built using **React.js** and **Context API
 ## ⚡ Installation & Setup
 ### 1⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/my-ecommerce-store.git
+git clone https://github.com/omidfoladvand4/my-ecommerce-store.git
 cd my-ecommerce-store
 ```
 
@@ -53,8 +53,6 @@ npm install
 ### 3⃣ Start the Project
 ```bash
 npm run dev
-```
-Your site will run at `http://localhost:3000`.
 
 ---
 ### live demo 
@@ -64,62 +62,10 @@ Your site will run at `http://localhost:3000`.
 ✅ View product details  
 ✅ Add products to cart  
 ✅ Remove products from cart  
-✅ Calculate total price  
-✅ Responsive design  
+✅ Calculate total price   
 
 ---
 
-## 🛠 How `Context API` Works
-### **1. Creating Context (`ShopContext.jsx`)**
-```jsx
-import React, { createContext, useState } from "react";
-import all_products from '../components/Assets/all_product';
-
-export const ShopContext = createContext(null);
-
-const ShopContextprovider = ({ children }) => {
-    const [cartItems, setCartItems] = useState({});
-
-    const addToCart = (id) => {
-        setCartItems(prev => ({ ...prev, [id]: (prev[id] || 0) + 1 }));
-    };
-
-    const removeFromCart = (id) => {
-        setCartItems(prev => ({ ...prev, [id]: Math.max((prev[id] || 0) - 1, 0) }));
-    };
-
-    return (
-        <ShopContext.Provider value={{ all_products, cartItems, addToCart, removeFromCart }}>
-            {children}
-        </ShopContext.Provider>
-    );
-};
-
-export default ShopContextprovider;
-```
-
-### **2. Using `useContext` in `CartItems.jsx`**
-```jsx
-import React, { useContext } from 'react';
-import { ShopContext } from '../../context/ShopContext';
-
-const CartItems = () => {
-    const { all_products, cartItems, removeFromCart } = useContext(ShopContext);
-
-    return (
-        <div className='cart-items'>
-            {all_products.map(product => cartItems[product.id] > 0 && (
-                <div key={product.id}>
-                    <p>{product.name} - {cartItems[product.id]} pcs</p>
-                    <button onClick={() => removeFromCart(product.id)}>❌ Remove</button>
-                </div>
-            ))}
-        </div>
-    );
-};
-
-export default CartItems;
-```
 
 ---
 
