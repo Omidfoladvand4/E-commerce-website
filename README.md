@@ -39,18 +39,18 @@ This is a simple **E-Commerce Store** built using **React.js** and **Context API
 ---
 
 ## ⚡ Installation & Setup
-### 1⃣   Clone the Repository
+### 1   Clone the Repository
 ```bash
 git clone https://github.com/omidfoladvand4/my-ecommerce-store.git
 cd my-ecommerce-store
 ```
 
-### 2⃣   Install Dependencies
+### 2   Install Dependencies
 ```bash
 npm install
 ```
 
-### 3⃣   Start the Project
+### 3   Start the Project
 ```bash
 npm run dev
 
