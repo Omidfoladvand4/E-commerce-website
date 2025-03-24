@@ -52,7 +52,7 @@ npm install
 
 ### 3⃣ Start the Project
 ```bash
-npm start
+npm run dev
 ```
 Your site will run at `http://localhost:3000`.
 
