@@ -67,28 +67,6 @@ npm run dev
 ---
 
 
----
-
-## 🛧 Development Notes & Debugging
-1⃣ **Check `useContext` Value**  
-- If `null` or `undefined`, ensure `ShopContextprovider` is wrapped correctly in `App.jsx`:
-```jsx
-import ShopContextprovider from './context/ShopContext';
-
-function App() {
-  return (
-    <ShopContextprovider>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product/:id" element={<Product />} />
-      </Routes>
-    </ShopContextprovider>
-  );
-}
-```
-
-2⃣ **Validate `cartItems` Values**  
-- Ensure `cartItems[item]` is not `undefined` before using it in calculations.
 
 ---
 
